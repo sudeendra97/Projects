@@ -180,15 +180,12 @@ class _TodaysReportWidgetState extends State<TodaysReportWidget>
                   ),
                   SizedBox(
                     height: 40,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.black)),
-                        onPressed: _saveForm,
-                        child: Text('Submit'),
-                      ),
+                    child: ElevatedButton(
+                      // style: ButtonStyle(
+                      //     backgroundColor:
+                      //         MaterialStateProperty.all(Colors.black)),
+                      onPressed: _saveForm,
+                      child: Text('Submit'),
                     ),
                   ),
                 ],

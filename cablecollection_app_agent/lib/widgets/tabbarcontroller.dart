@@ -23,49 +23,50 @@ class tabBarController extends StatefulWidget {
 class _tabBarControllerState extends State<tabBarController> {
   @override
   void initState() {
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      print(message);
-      RemoteNotification notification = message.notification;
-      AndroidNotification android = message.notification?.android;
-      // if (notification != null && android != null) {
-      flutterLocalNotificationsPlugin.show(
-          message.data.hashCode,
-          message.data['title'],
-          message.data['body'],
-          // notification.hashCode,
-          // notification.title,
-          // notification.body,
-          NotificationDetails(
-            android: AndroidNotificationDetails(
-              channel.id,
-              channel.name,
-              channel.description,
-              color: Colors.blue,
-            ),
-          ));
-      // }
-    });
+    // FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    //   print(message);
+    //   RemoteNotification notification = message.notification;
+    //   AndroidNotification android = message.notification?.android;
+    //   // if (notification != null && android != null) {
+    //   flutterLocalNotificationsPlugin.show(
+    //       message.data.hashCode,
+    //       message.data['title'],
+    //       message.data['body'],
+    //       // notification.hashCode,
+    //       // notification.title,
+    //       // notification.body,
+    //       NotificationDetails(
+    //         android: AndroidNotificationDetails(
+    //           channel.id,
+    //           channel.name,
+    //           channel.description,
+    //           color: Colors.blue,
+    //         ),
+    //       ));
+    //   // }
+    // });
 
-    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      print('A new onMessageOpenedApp event was published');
-      RemoteNotification notification = message.notification;
-      AndroidNotification android = message.notification.android;
-      if (notification != null && android != null) {
-        showDialog(
-            context: context,
-            builder: (_) {
-              return AlertDialog(
-                title: Text(notification.title),
-                content: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [Text(notification.body)],
-                  ),
-                ),
-              );
-            });
-      }
-    });
+    // FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+    //   print('A new onMessageOpenedApp event was published');
+    //   RemoteNotification notification = message.notification;
+    //   AndroidNotification android = message.notification.android;
+    //   print(notification);
+    //   if (notification != null && android != null) {
+    //     showDialog(
+    //         context: context,
+    //         builder: (_) {
+    //           return AlertDialog(
+    //             title: Text(notification.title),
+    //             content: SingleChildScrollView(
+    //               child: Column(
+    //                 crossAxisAlignment: CrossAxisAlignment.start,
+    //                 children: [Text(notification.body)],
+    //               ),
+    //             ),
+    //           );
+    //         });
+    //   }
+    // });
     super.initState();
   }
 
@@ -73,7 +74,7 @@ class _tabBarControllerState extends State<tabBarController> {
   Widget build(BuildContext context) {
     return DefaultTabController(
       initialIndex: 0,
-      length: 3,
+      length: 2,
       child: Scaffold(
         backgroundColor: widget.darkBlue,
         drawer: DrawerContainer(),

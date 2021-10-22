@@ -5,6 +5,7 @@ import 'package:cablecollection_app/providers/customerbill.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:telephony/telephony.dart';
 
 class BillingScreen extends StatefulWidget {
   static const routeName = '/BillingScreen';
@@ -21,15 +22,18 @@ class _BillingScreenState extends State<BillingScreen> {
   var numberOfDays = 30;
   var cuId;
   var isloading = true;
+  var myFormat = DateFormat('dd-MM-yyyy');
+  final Telephony telephony = Telephony.instance;
 
   Map<String, dynamic> customerData;
-  var cusValues = {
+  Map<String, dynamic> cusValues = {
     'id': '',
     'name': '',
     'smartCardNumber': '',
     'packageAmount': '',
     'advance': '0',
     'lastPaid': '',
+    'mobileNumber': null,
   };
   var customerBillData = CustomerBill(
     advance: '',
@@ -82,6 +86,7 @@ class _BillingScreenState extends State<BillingScreen> {
                   'smartCardNumber': value['smartCardNumber'],
                   'packageAmount': value['packageAmount'],
                   'lastPaid': value['paidAmount'],
+                  'mobileNumber': value['number'],
                 };
               });
               reRun();
@@ -186,9 +191,21 @@ class _BillingScreenState extends State<BillingScreen> {
           var token = Provider.of<Auth>(context, listen: false).token;
           Provider.of<BillList>(context, listen: false)
               .addBill(customerBillData, token)
-              .then((value) {
+              .then((value) async {
             if (value == 201 || value == 200) {
               reRun();
+              bool permissionsGranted =
+                  await telephony.requestPhoneAndSmsPermissions;
+              final SmsSendStatusListener listener = (SendStatus status) {
+                print('success');
+                // Handle the status
+              };
+              telephony.sendSms(
+                to: cusValues['mobileNumber'].toString(),
+                message:
+                    "Your Cable Bill of Rs${customerBillData.paidamount} is paid on ${myFormat.format(DateTime.fromMillisecondsSinceEpoch(customerBillData.billdate))}",
+                statusListener: listener,
+              );
               showDialog(
                 context: context,
                 builder: (ctx) => AlertDialog(
@@ -375,7 +392,6 @@ class _BillingScreenState extends State<BillingScreen> {
                             ),
                             Card(
                               child: TextFormField(
-                             
                                 decoration:
                                     InputDecoration(labelText: 'Bill Number*'),
                                 validator: (value) {

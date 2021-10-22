@@ -8,7 +8,8 @@ import 'package:http/http.dart' as http;
 class BillList with ChangeNotifier {
   List<CustomerBill> _allBilllist = [];
   List<CustomerBill> singleBilllist = [];
-  var baseUrl = 'https://samasthadeeparednet.herokuapp.com/';
+  // var baseUrl = 'https://samasthadeeparednet.herokuapp.com/';
+  var baseUrl = 'https://demoeazybill.herokuapp.com/';
 
   static var cusId;
 

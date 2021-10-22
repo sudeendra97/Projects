@@ -15,7 +15,8 @@ class Auth with ChangeNotifier {
   var _authTimer;
   // String url=
 
-  var baseUrl = 'https://samasthadeeparednet.herokuapp.com/';
+  // var baseUrl = 'https://samasthadeeparednet.herokuapp.com/';
+  var baseUrl = 'https://demoeazybill.herokuapp.com/';
 
   bool get isAuth {
     return token != null;

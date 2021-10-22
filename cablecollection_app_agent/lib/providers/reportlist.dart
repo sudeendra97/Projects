@@ -20,7 +20,9 @@ class ReportList with ChangeNotifier {
   List<Customer> _list = [];
   int colletionTotal = 0;
   static var cusId;
-  var baseUrl = 'https://samasthadeeparednet.herokuapp.com/';
+  // var baseUrl = 'https://samasthadeeparednet.herokuapp.com/';
+  var baseUrl = 'https://demoeazybill.herokuapp.com/';
+
   static var areaSelected = false;
   static var selectedArea = '';
 

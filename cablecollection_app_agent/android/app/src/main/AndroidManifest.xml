@@ -7,9 +7,10 @@
          FlutterApplication and put your custom class here. -->
           <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
           <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+          <uses-permission android:name="android.permission.SEND_SMS"/>
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="cablecollection_app"
+        android:label="cablecollection_agent"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
