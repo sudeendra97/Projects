@@ -1,0 +1,255 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "cablecollection_app",
+            "cwd": "cablecollection_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "cablecollection_app (profile mode)",
+            "cwd": "cablecollection_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "customscrollview_app",
+            "cwd": "customscrollview_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "customscrollview_app (profile mode)",
+            "cwd": "customscrollview_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "dummy_app",
+            "cwd": "dummy_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "dummy_app (profile mode)",
+            "cwd": "dummy_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "elevatedbutton_app",
+            "cwd": "elevatedbutton_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "elevatedbutton_app (profile mode)",
+            "cwd": "elevatedbutton_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "exciting_places_app",
+            "cwd": "exciting_places_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "exciting_places_app (profile mode)",
+            "cwd": "exciting_places_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "gridview_app",
+            "cwd": "gridview_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "gridview_app (profile mode)",
+            "cwd": "gridview_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "indexedstack_app",
+            "cwd": "indexedstack_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "indexedstack_app (profile mode)",
+            "cwd": "indexedstack_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "listview_app",
+            "cwd": "listview_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "listview_app (profile mode)",
+            "cwd": "listview_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "meals_app",
+            "cwd": "meals_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "meals_app (profile mode)",
+            "cwd": "meals_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "new_app",
+            "cwd": "new_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "new_app (profile mode)",
+            "cwd": "new_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "personal_expense",
+            "cwd": "personal_expense",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "personal_expense (profile mode)",
+            "cwd": "personal_expense",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "pet_Shop",
+            "cwd": "pet_Shop",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "pet_Shop (profile mode)",
+            "cwd": "pet_Shop",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "second_app",
+            "cwd": "second_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "second_app (profile mode)",
+            "cwd": "second_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "shop_app",
+            "cwd": "shop_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "shop_app (profile mode)",
+            "cwd": "shop_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "simple_chat_app",
+            "cwd": "simple_chat_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "simple_chat_app (profile mode)",
+            "cwd": "simple_chat_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "SingleChildLayout_app",
+            "cwd": "SingleChildLayout_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "SingleChildLayout_app (profile mode)",
+            "cwd": "SingleChildLayout_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "sliverappbar_app",
+            "cwd": "sliverappbar_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "sliverappbar_app (profile mode)",
+            "cwd": "sliverappbar_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "tabbar_app",
+            "cwd": "tabbar_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "tabbar_app (profile mode)",
+            "cwd": "tabbar_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "todo_app",
+            "cwd": "todo_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "todo_app (profile mode)",
+            "cwd": "todo_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        }
+    ]
+}

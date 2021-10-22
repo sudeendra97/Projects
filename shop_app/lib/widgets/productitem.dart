@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/Screens/productdetailscreen.dart';
+import 'package:shop_app/providers/auth.dart';
 import 'package:shop_app/providers/cart.dart';
 import 'package:shop_app/providers/productsblueprint.dart';
 
@@ -15,6 +16,7 @@ class ProductItem extends StatelessWidget {
     //by giving listen=false .of<context> method only runs once in the widget tree
     final productData = Provider.of<Product>(context, listen: false);
     final cart = Provider.of<Cart>(context, listen: false);
+    final authData = Provider.of<Auth>(context);
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: GridTile(
@@ -25,9 +27,15 @@ class ProductItem extends StatelessWidget {
               arguments: productData.id,
             );
           },
-          child: Image.network(
-            productData.imageUrl,
-            fit: BoxFit.cover,
+          child: Hero(
+            tag: productData.id,
+            child: FadeInImage(
+              placeholder: AssetImage('assets/images/product-placeholder.png'),
+              image: NetworkImage(
+                productData.imageUrl,
+              ),
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         //u can also use header here to show price etc.
@@ -39,7 +47,8 @@ class ProductItem extends StatelessWidget {
                   ? Icons.favorite
                   : Icons.favorite_border),
               onPressed: () {
-                productData.toggleFavoriteStatus();
+                productData.toggleFavoriteStatus(
+                    authData.token as String, authData.userId);
               },
               color: Theme.of(context).accentColor,
             ),

@@ -1,55 +1,117 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(HomePage());
 }
 
-class MyApp extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  HomePage({Key? key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'customScrollView',
-      home: Scaffold(
-        body: CustomScrollView(
-          slivers: <Widget>[
-            const SliverAppBar(
-              pinned: true,
-              expandedHeight: 50.0,
-              flexibleSpace: FlexibleSpaceBar(
-                centerTitle: true,
-                title: Text('custom scroll bar'),
-              ),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Wrap(
+          children: [
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Card(
+                  elevation: 8,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                            alignment: Alignment.topLeft, child: Text('data')),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Column(
+                              children: [
+                                Text('inActive'),
+                                Text('10'),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Text('Active'),
+                                Text('50'),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Text('Store'),
+                                Text('0'),
+                              ],
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
             ),
-            SliverGrid(
-              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 200.0,
-                mainAxisSpacing: 10.0,
-                crossAxisSpacing: 10.0,
-                childAspectRatio: 4.0,
-              ),
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  return Container(
-                    alignment: Alignment.center,
-                    color: Colors.teal[100 * (index % 9)],
-                    child: Text('Grid Item $index'),
-                  );
-                },
-                childCount: 20,
-              ),
-            ),
-            SliverFixedExtentList(
-              itemExtent: 50.0,
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  return Container(
-                    alignment: Alignment.center,
-                    color: Colors.lightBlue[100 * (index % 9)],
-                    child: Text('List Item $index'),
-                  );
-                },
-                childCount: 20,
-              ),
-            ),
+            ListView.builder(
+              //  physics: NeverScrollableScrollPhysics(),
+              itemCount: 10,
+              itemBuilder: (BuildContext context, int index) {
+                return Card(
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 50,
+                          child: Text('AreaName'),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30),
+                        child: Container(
+                          height: 50,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Column(
+                                children: [
+                                  Text('inactive'),
+                                  Text('value'),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  Text('active'),
+                                  Text('value'),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  Text('store'),
+                                  Text('value'),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            )
           ],
         ),
       ),
